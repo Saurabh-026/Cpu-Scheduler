@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduler Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleDropdown() {
+            document.getElementById("dropdown-menu").classList.toggle("hidden");
+        }
+        document.addEventListener("click", function(event) {
+            let dropdown = document.getElementById("dropdown-menu");
+            let button = document.getElementById("dropdown-button");
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add("hidden");
+            }
+        });
+    </script>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-200 text-black min-h-screen flex flex-col">
+    <header class="bg-gradient-to-r from-gray-900 to-gray-700 text-white p-6 shadow-lg flex items-center">
+        <h1 class="text-3xl font-bold mr-6">CPU Scheduler</h1>
+        <div class="relative">
+            <button id="dropdown-button" class="text-xl font-semibold focus:outline-none flex items-center" onclick="toggleDropdown()">Algorithms <span class="ml-2">&#9662;</span></button>
+            <div id="dropdown-menu" class="absolute left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg hidden">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-200">First Come First Serve (FCFS)</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-200">Shortest Job First (SJF)</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-200">Longest Job First (LJF)</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-200">Shortest Remaining Time First (SRTF)</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-200">Longest Remaining Time First (LRTF)</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-200">Round Robin (RR)</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-200">Priority Scheduling (Non-Preemptive)</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-200">Priority Scheduling (Preemptive)</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="p-10 flex-grow flex gap-6">
+        <section id="os-info" class="bg-white p-6 rounded-lg shadow-md w-3/5">
+            <h2 class="text-2xl font-semibold text-blue-800">What is an Operating System?</h2>
+            <p class="text-gray-600 mt-2">An Operating System (OS) is system software that manages computer hardware and software resources. It provides common services for computer programs and acts as an intermediary between the user and the computer hardware.</p>
+        </section>
+        
+        <div class="w-2/5 flex justify-center items-center">
+            <iframe class="w-[450px] h-[450px] rounded-lg shadow-md" src="https://www.youtube.com/embed/Mt9wr7Lpxto" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <section id="cpu-scheduling" class="bg-white p-6 rounded-lg shadow-md mx-10 my-6">
+        <h2 class="text-2xl font-semibold text-blue-800">Introduction to CPU Scheduling</h2>
+        <p class="text-gray-600 mt-2">CPU Scheduling is a crucial function of an operating system that determines the order in which processes execute. It optimizes CPU utilization, improves system performance, and ensures fairness among processes.</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">Learn More</button>
+    </section>
+    
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-700 text-white text-center p-4 mt-8 shadow-lg">
+        <p>&copy; 2025 CPU Scheduler Simulator. All rights reserved.</p>
+    </footer>
+</body>
+</html>

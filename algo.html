@@ -2,133 +2,157 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheduling Algorithms</title>
-    <link rel="icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <style>
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-fade-in-up {
-        animation: fadeInUp 1s ease forwards;
-      }
-      .opacity-0 {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheduling Algorithms</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeInUp {
+      from {
         opacity: 0;
+        transform: translateY(30px);
       }
-    </style>
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1, h3 {
+      font-weight: 700;
+    }
+  </style>
 </head>
 
-<body >
-    <header >
-        <h1 >
-          Intelligent CPU Scheduler Simulator
-        </h1>
-        <a href="index.html">
-        <button class="custom">
-          HOME
-        </button></a>
-      </header>
-    
-    <div class="container mx-auto opacity-0 animate-target">
-        <h3>Instructions :</h3>
-        <ol class="instructions">
-            <li>Tiebreaker is Process ID.</li>
-            <li>When burst time is criteria, total burst time is taken into consideration.</li>
-            <li>Context Switch not considered at start and end of processes.</li>
-        </ol>
-        <h3>Preferences :</h3>
-        <br>
-        <ol class="preferences">
-            <li>
-                Priority : 1 is
-                <button id="priority-toggle-btn">
-                    <span id="priority-preference">high</span>
-                    <i class="fa fa-refresh"></i>
-                </button>
-            </li><br>
-            <form id="algorithms-form">
-                <label for="algo">
-                    <h3>Algorithms : </h3>
-                </label>
-                <br>
-                <select name="algo" id="algo">
-                    <option value="fcfs">First Come First Serve (FCFS)</option>
-                    <option value="sjf">Shortest Job First (SJF)</option>
-                    <option value="ljf">Longest Job First (LJF)</option>
-                    <option value="srtf">Shortest Remaining Job First (SRTF)</option>
-                    <option value="lrtf">Longest Remaining Job First (LRTF)</option>
-                    <option value="rr">Round Robin</option>
-                    <option value="pnp">Priority (Non Preemptive)</option>
-                    <option value="pp">Priority (Preemptive)</option>
-                </select>
-            </form>
-            <br>
-            <table class="main-table">
-                <thead>
-                    <tr>
-                        <th class="process-id">Process ID</th>
-                        <th class="priority hide">Priority</th>
-                        <th class="arrival-time">Arrival Time</th>
-                        <th class="process-time" colspan="1">Process Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="process-id" rowspan="2">P1</td>
-                        <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1"></td>
-                        <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0"> </td>
-                        <td class="process-time cpu process-heading" colspan="">CPU</td>
-                        <td class="process-btn"><button type="button" class="add-process-btn">+</button></td>
-                        <td class="process-btn"><button type="button" class="remove-process-btn">-</button></td>
-                    </tr>
-                    <tr>
-                        <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <button type="button" class="add-btn">Add Process</button>
-            <button type="button" class="remove-btn">Delete Process</button>
-            <div id="context-switch-div">
-                <br>
-                <label for="context-switch">Context Switch Time : </label>
-                <input type="number" name="Context Switch" id="context-switch" min="0" step="1" value="0">
-            </div>
-            <div id="time-quantum" class="hide">
-                <br>
-                <label for="tq">Time Quantum : </label>
-                <input type="number" name="Time Quantum" id="tq" min="1" step="1" value="1">
-            </div>
-            <br>
-            <button type="button" id="calculate">Calculate</button>
-            <button type="button" id="reset" onClick="window.location.reload();">Reset</button>
-            <div id="output"></div>
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-            <script src="script.js"></script>
-            <script>
-              const target = document.querySelector('.animate-target');
-              const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                    entry.target.classList.add("animate-fade-in-up");
-                    entry.target.classList.remove("opacity-0");
-                  }
-                });
-              }, { threshold: 0.1 });
-              observer.observe(target);
-            </script>
-        </div>
+<body class="bg-linear-to-bl from-violet-500 to-fuchsia-500 text-gray-800 "></div>
+
+  <header class="bg-gray-700 text-white p-6 shadow-md flex justify-between items-center">
+  <h1 class="text-2xl md:text-3xl">Intelligent CPU Scheduler Simulator</h1>
+    <a href="index.html">
+      <button class="bg-white text-blue-600 px-4 py-2 rounded-lg shadow hover:bg-gray-100 transition">HOME</button>
+    </a>
+  </header>
+  
+
+  <div class=" mx-auto max-h-screen bg-pink-200 mt-8 p-6 bg-white rounded-xl shadow-lg opacity-0 animate-target">
+    <h3 class="text-xl mb-2">Instructions :</h3>
+    <ol class="list-decimal list-inside text-sm md:text-base mb-6">
+      <li>Tiebreaker is Process ID.</li>
+      <li>When burst time is criteria, total burst time is taken into consideration.</li>
+      <li>Context Switch not considered at start and end of processes.</li>
+    </ol>
+
+    <h3 class="text-xl mb-2">Preferences :</h3>
+    <ol class="list-disc list-inside text-sm md:text-base mb-4">
+      <li>
+        Priority : 1 is
+        <button id="priority-toggle-btn" class="ml-2 px-3 py-1 bg-blue-100 border border-blue-500 rounded">
+          <span id="priority-preference">high</span>
+          <i class="fa fa-refresh ml-1"></i>
+        </button>
+      </li>
+    </ol>
+
+    <form id="algorithms-form" class="mb-6">
+      <label for="algo">
+        <h3 class="text-xl mb-1">Algorithms : </h3>
+      </label>
+      <select name="algo" id="algo" class="w-full p-2 border rounded">
+        <option value="fcfs">First Come First Serve (FCFS)</option>
+        <option value="sjf">Shortest Job First (SJF)</option>
+        <option value="ljf">Longest Job First (LJF)</option>
+        <option value="srtf">Shortest Remaining Job First (SRTF)</option>
+        <option value="lrtf">Longest Remaining Job First (LRTF)</option>
+        <option value="rr">Round Robin</option>
+        <option value="pnp">Priority (Non Preemptive)</option>
+        <option value="pp">Priority (Preemptive)</option>
+      </select>
+    </form>
+
+    <table class="main-table w-full border mt-4 text-sm">
+      <thead>
+        <tr class="bg-blue-100">
+          <th class="p-2">Process ID</th>
+          <th class="p-2 priority hide">Priority</th>
+          <th class="p-2">Arrival Time</th>
+          <th class="p-2">Process Time</th>
+          <th class="p-2">Add</th>
+          <th class="p-2">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-gray-50">
+          <td rowspan="2" class="p-2">P1</td>
+          <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1" class="p-1 border rounded"></td>
+          <td rowspan="2"><input type="number" min="0" step="1" value="0" class="p-1 border rounded"></td>
+          <td class="bg-blue-50 p-2">CPU</td>
+          <td class="p-2"><button type="button" class="add-process-btn bg-green-100 px-2 py-1 rounded">+</button></td>
+          <td class="p-2"><button type="button" class="remove-process-btn bg-red-100 px-2 py-1 rounded">-</button></td>
+        </tr>
+        <tr class="bg-white">
+          <td class="p-2" colspan="3"><input type="number" min="1" step="1" value="1" class="w-full p-1 border rounded"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mt-4 space-x-4">
+      <button type="button" class="add-btn bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Add Process</button>
+      <button type="button" class="remove-btn bg-red-600 text-white px-4 py-2 rounded shadow hover:bg-red-700">Delete Process</button>
+    </div>
+
+    <div id="context-switch-div" class="mt-4">
+      <label for="context-switch" class="block mb-1 font-medium">Context Switch Time:</label>
+      <input type="number" name="Context Switch" id="context-switch" min="0" step="1" value="0" class="w-full p-2 border rounded">
+    </div>
+
+    <div id="time-quantum" class="hide mt-4">
+      <label for="tq" class="block mb-1 font-medium">Time Quantum:</label>
+      <input type="number" name="Time Quantum" id="tq" min="1" step="1" value="1" class="w-full p-2 border rounded">
+    </div>
+
+    <div class="mt-6 space-x-4">
+      <button type="button" id="calculate" class="border border-black bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-white hover:text-blue-600 hover:border-blue-600 transition" title="Start the scheduling simulation">
+        <i class="fa fa-play mr-2"></i>Calculate
+      </button>
+      <button type="button" id="reset" onClick="window.location.reload();" class="border border-black bg-gray-400 text-white px-4 py-2 rounded shadow hover:bg-white hover:text-gray-800 hover:border-gray-600 transition" title="Reset all fields">
+        <i class="fa fa-refresh mr-2"></i>Reset
+      </button>
+    </div>
+
+    <div id="output" class="mt-6 w-full">
+      </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const target = document.querySelector('.animate-target');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in-up");
+            entry.target.classList.remove("opacity-0");
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(target);
+    </script>
+  </div>
 </body>
+
 </html>

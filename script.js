@@ -664,12 +664,26 @@ function nextTimeLog(timeLog) {
     document.getElementById("time-log-time").innerHTML = "Time : " + timeLog.time;
 }
 
+
 function showTimeLog(output, outputDiv) {
+    let startTimeLogButton = document.createElement("button");
+    startTimeLogButton.id = "start-time-log";
+    startTimeLogButton.innerHTML = "Start Time Log";
+
+    // **** ADD Tailwind Classes to the BUTTON ****
+    startTimeLogButton.classList.add(
+        "border-2",          // Add a default border
+        "border-black", // Set border color
+        "px-3",            // Horizontal padding
+        "py-1",            // Vertical padding
+        "rounded",         // Make corners rounded
+        "bg-pink-300",     // Example background
+        "hover:bg-blue-200") // Example hover effect
     reduceTimeLog(output.timeLog);
     let timeLogDiv = document.createElement("div");
     timeLogDiv.id = "time-log-div";
     timeLogDiv.style.height = (15 * process) + 300 + "px";
-    let startTimeLogButton = document.createElement("button");
+    // let startTimeLogButton = document.createElement("button");
     startTimeLogButton.id = "start-time-log";
     startTimeLogButton.innerHTML = "Start Time Log";
     timeLogDiv.appendChild(startTimeLogButton);

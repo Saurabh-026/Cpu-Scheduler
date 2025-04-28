@@ -31,121 +31,123 @@
              50% { background-position: 100% 50%; }
              100% { background-position: 0% 50%; }
          }
-        .animated-gradient-bg-blocks {
-             background: linear-gradient(-45deg, #a7f3d0, #a5f3fc, #fbcfe8, #c4b5fd);
+         /* --- GRADIENT COLOR CHANGED HERE --- */
+         .animated-gradient-bg-blocks {
+             background: linear-gradient(-45deg, #a5f3fc, #a8a2f9, #d8b4fe, #c4b5fd); /* Blues & Purples example */
              background-size: 400% 400%;
              animation: gradientAnimation 18s ease infinite;
              cursor: pointer;
          }
          .animated-gradient-bg-blocks h2,
          .animated-gradient-bg-blocks h3 {
-              color: #1f2937;
+              color: #1f2937; /* Dark gray text */
          }
          .animated-gradient-bg-blocks p,
          .animated-gradient-bg-blocks span,
          .animated-gradient-bg-blocks div,
          .animated-gradient-bg-blocks li {
-              color: #374151;
+              color: #374151; /* Medium gray text */
          }
          .animated-gradient-bg-blocks strong {
               color: #1f2937;
               font-weight: 600;
          }
          .animated-gradient-bg-blocks i {
-              color: #1f2937 !important;
+              color: #1f2937 !important; /* Ensure icons match text */
               opacity: 0.8;
          }
-        .modal-close-button {
-            position: absolute; top: 0.75rem; right: 1rem;
-            background-color: rgba(255, 255, 255, 0.6);
-            color: #374151;
-            border-radius: 50%;
-            width: 32px; height: 32px; display: flex;
-            align-items: center; justify-content: center;
-            font-size: 1.875rem; line-height: 1; font-weight: bold;
-            transition: background-color 0.2s, color 0.2s;
-            border: none; cursor: pointer; padding: 0;
-            z-index: 10;
-        }
-        .modal-close-button:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #e11d48;
-        }
-        .modal-visualize-button {
-            background-image: linear-gradient(to right, var(--tw-gradient-stops));
-            --tw-gradient-from: #ec4899;
-            --tw-gradient-to: #9333ea;
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-            color: white !important;
-            font-weight: bold;
-            padding-left: 1.25rem;
-            padding-right: 1rem;
-            padding-top: 0.5rem; padding-bottom: 0.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition-property: transform, background-image, color;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 200ms;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 1rem;
-            text-decoration: none;
-        }
-         .modal-visualize-button:hover {
-            --tw-gradient-from: #db2777;
-            --tw-gradient-to: #7e22ce;
-            transform: scale(1.05) translateY(-2px);
-            color: white !important;
-            text-decoration: none !important;
+         .modal-close-button {
+              position: absolute; top: 0.75rem; right: 1rem;
+              background-color: rgba(255, 255, 255, 0.6);
+              color: #374151;
+              border-radius: 50%;
+              width: 32px; height: 32px; display: flex;
+              align-items: center; justify-content: center;
+              font-size: 1.875rem; line-height: 1; font-weight: bold;
+              transition: background-color 0.2s, color 0.2s;
+              border: none; cursor: pointer; padding: 0;
+              z-index: 10;
          }
-        .modal-text-content h3 {
-            font-size: 1.1rem; font-weight: 600;
-            color: #1e3a8a;
-            margin-top: 1rem; margin-bottom: 0.5rem;
-        }
-         .modal-text-content h3:first-child { margin-top: 0; }
-         .modal-text-content p { margin-bottom: 0.75rem; line-height: 1.6; color: #374151;}
-         .modal-text-content ul.characteristics-list,
-         .modal-text-content ul.core-functions-list {
-             list-style: disc; margin-left: 1.5rem; margin-bottom: 0.75rem; padding-left: 0.5rem;
-             color: #374151;
+         .modal-close-button:hover {
+              background-color: rgba(255, 255, 255, 0.9);
+              color: #e11d48; /* Rose color on hover */
          }
-         .modal-text-content ol.steps-list {
-             list-style: decimal; margin-left: 1.5rem; margin-bottom: 0.75rem; padding-left: 0.5rem;
-             color: #374151;
+         .modal-visualize-button {
+              background-image: linear-gradient(to right, var(--tw-gradient-stops));
+              --tw-gradient-from: #ec4899; /* pink-500 */
+              --tw-gradient-to: #9333ea; /* purple-600 */
+              --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+              color: white !important;
+              font-weight: bold;
+              padding-left: 1.25rem; /* px-5 */
+              padding-right: 1rem; /* px-4 adjusted for icon */
+              padding-top: 0.5rem; padding-bottom: 0.5rem; /* py-2 */
+              border-radius: 0.5rem; /* rounded-lg */
+              box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+              transition-property: transform, background-image, color;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 200ms;
+              border: none;
+              cursor: pointer;
+              display: inline-block; /* Changed from inline-flex */
+              margin-top: 1rem; /* mt-4 */
+              text-decoration: none; /* Ensure no underline */
          }
-         .modal-text-content li { margin-bottom: 0.5rem; }
-         .modal-text-content strong {
-             color: #1f2937;
-             font-weight: 600;
+          .modal-visualize-button:hover {
+              --tw-gradient-from: #db2777; /* pink-600 */
+              --tw-gradient-to: #7e22ce; /* purple-700 */
+              transform: scale(1.05) translateY(-2px);
+              color: white !important;
+              text-decoration: none !important;
          }
-         .modal-text-content a {
-             color: #2563eb;
-             font-weight: 600;
-             transition: color 0.2s ease-out;
+         .modal-text-content h3 {
+              font-size: 1.1rem; font-weight: 600;
+              color: #1e3a8a; /* Dark blue heading */
+              margin-top: 1rem; margin-bottom: 0.5rem;
          }
-         .modal-text-content a:hover {
-            color: #1d4ed8;
-            text-decoration: underline;
-         }
-         .modal-text-content i {
-            color: #4b5563 !important;
-            opacity: 0.9;
-         }
+          .modal-text-content h3:first-child { margin-top: 0; }
+          .modal-text-content p { margin-bottom: 0.75rem; line-height: 1.6; color: #374151;}
+          .modal-text-content ul.characteristics-list,
+          .modal-text-content ul.core-functions-list {
+              list-style: disc; margin-left: 1.5rem; margin-bottom: 0.75rem; padding-left: 0.5rem;
+              color: #374151;
+          }
+          .modal-text-content ol.steps-list {
+              list-style: decimal; margin-left: 1.5rem; margin-bottom: 0.75rem; padding-left: 0.5rem;
+              color: #374151;
+          }
+          .modal-text-content li { margin-bottom: 0.5rem; }
+          .modal-text-content strong {
+              color: #1f2937; /* Dark gray */
+              font-weight: 600;
+          }
+          .modal-text-content a {
+              color: #2563eb; /* blue-600 */
+              font-weight: 600;
+              transition: color 0.2s ease-out;
+          }
+          .modal-text-content a:hover {
+             color: #1d4ed8; /* blue-700 */
+             text-decoration: underline;
+          }
+          .modal-text-content i { /* Specificity for icons inside modals */
+              color: #4b5563 !important; /* gray-600 */
+              opacity: 0.9;
+          }
     </style>
 </head>
 <body class="bg-gradient-to-r from-blue-100 to-purple-200 text-gray-800 min-h-screen flex flex-col">
+
     <header class="bg-gradient-to-r from-gray-900 to-gray-700 text-white px-8 py-4 shadow-lg flex items-center justify-between sticky top-0 z-50 border-b border-gray-600">
         <h1 class="text-2xl md:text-3xl font-bold transition-colors duration-300 hover:text-teal-300">
             Intelligent CPU Scheduler Simulator
         </h1>
-        <a href="algo.html">
-            <button class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold px-4 py-2 rounded-lg shadow transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2">
+        <a href="algo.html"> <button class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold px-4 py-2 rounded-lg shadow transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2">
                 Algorithm Visualizer
             </button>
         </a>
     </header>
+
     <main class="p-6 md:p-10 flex-grow">
         <section class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-12 md:mb-16">
             <div onclick="openModal('os-modal')"
@@ -159,12 +161,13 @@
             <div onclick="openModal('cpu-modal')"
                  class="animated-gradient-bg-blocks p-6 rounded-lg shadow-md block-hover-effect">
                   <h2 class="text-xl md:text-2xl font-semibold mb-2 flex items-center">
-                       <i class="fas fa-tasks mr-3"></i>Introduction to CPU Scheduling
+                      <i class="fas fa-tasks mr-3"></i>Introduction to CPU Scheduling
                   </h2>
                   <p>Understand how the OS selects processes for CPU execution to optimize performance.</p>
                   <span class="text-sm font-semibold mt-3 inline-block">Click to read more...</span>
-            </div>
+             </div>
         </section>
+
         <section>
             <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-700 mb-8">Explore Scheduling Algorithms</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
@@ -188,7 +191,7 @@
                     <h3 class="text-lg font-semibold mb-2">Shortest Remaining Time First (SRTF)</h3>
                     <p class="text-sm">Preemptive version of SJF; shortest remaining time runs.</p>
                  </div>
-                <div onclick="openModal('lrtf-modal')" class="animated-gradient-bg-blocks p-6 rounded-lg shadow-md block-hover-effect text-center">
+                 <div onclick="openModal('lrtf-modal')" class="animated-gradient-bg-blocks p-6 rounded-lg shadow-md block-hover-effect text-center">
                     <i class="fas fa-hourglass-half text-3xl mb-3"></i>
                     <h3 class="text-lg font-semibold mb-2">Longest Remaining Time First (LRTF)</h3>
                     <p class="text-sm">Preemptive version of LJF; longest remaining time runs.</p>
@@ -207,98 +210,99 @@
                      <i class="fas fa-star-half-alt text-3xl mb-3"></i>
                      <h3 class="text-lg font-semibold mb-2">Priority (Non-Preemptive)</h3>
                      <p class="text-sm">Higher priority process runs next upon completion/block.</p>
-                 </div>
+                </div>
             </div>
         </section>
     </main>
+
     <footer class="bg-gradient-to-r from-gray-900 to-gray-700 text-white text-center p-4 mt-auto shadow-lg">
-        <p>© 2025 Intelligent CPU Scheduler Simulator.</p>
-    </footer>
+        <p>© 2025 Intelligent CPU Scheduler Simulator.</p> </footer>
+
     <div id="os-modal"
          class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out"
          onclick="closeModal('os-modal')">
          <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out"
               onclick="event.stopPropagation()">
-             <button onclick="closeModal('os-modal')" class="modal-close-button">&times;</button>
-             <h2 class="text-2xl font-semibold mb-4 text-black">What is an Operating System?</h2>
-             <div class="modal-text-content space-y-3 max-h-[75vh] overflow-y-auto pr-4">
-                 <p>An Operating System (OS) is the fundamental software that acts as an intermediary between computer hardware and the user (or application software). It manages the computer's hardware resources and provides common services for computer programs. Without an OS, a computer is just a collection of electronic parts.</p>
-                 <p>It controls and manages hardware like the Central Processing Unit (CPU), memory, storage devices (hard drives, SSDs), and input/output devices (keyboard, mouse, monitor, printer). It also manages software execution, ensuring that multiple applications can run concurrently without interfering with each other.</p>
-                 <p>The OS provides a user interface (UI), which can be a Graphical User Interface (GUI) with icons and windows, or a Command-Line Interface (CLI) where users type commands. This UI allows users to interact with the computer system.</p>
-                 <h3>Core Functions:</h3>
-                 <ul class="core-functions-list">
-                     <li><strong>Process Management:</strong> Creating, deleting, suspending, and resuming processes (running programs), and managing how they share the CPU.</li>
-                     <li><strong>Memory Management:</strong> Allocating and deallocating memory space to processes as needed, keeping track of memory usage, and swapping processes between main memory and disk.</li>
-                     <li><strong>File System Management:</strong> Organizing files and directories on storage devices, controlling access permissions, and providing mechanisms for file creation, deletion, and manipulation.</li>
-                     <li><strong>Device Management:</strong> Managing communication with hardware devices through device drivers, handling input/output operations.</li>
-                     <li><strong>Security and Protection:</strong> Protecting system resources from unauthorized access and ensuring that different processes cannot interfere with each other's memory or data.</li>
-                     <li><strong>Networking:</strong> Managing network connections and protocols, enabling communication between computers.</li>
-                 </ul>
-                 <p>Examples of popular operating systems include Microsoft Windows (for desktops/laptops), macOS (for Apple desktops/laptops), Linux (servers, desktops, embedded systems), Android (for smartphones/tablets), and iOS (for Apple iPhones/iPads).</p>
-                 <p>In essence, the OS abstracts the complexity of the hardware, providing a consistent platform for applications to run and enabling users to perform tasks efficiently.</p>
-             </div>
+              <button onclick="closeModal('os-modal')" class="modal-close-button">&times;</button>
+              <h2 class="text-2xl font-semibold mb-4 text-black">What is an Operating System?</h2>
+              <div class="modal-text-content space-y-3 max-h-[75vh] overflow-y-auto pr-4">
+                   <p>An Operating System (OS) is the fundamental software that acts as an intermediary between computer hardware and the user (or application software). It manages the computer's hardware resources and provides common services for computer programs. Without an OS, a computer is just a collection of electronic parts.</p>
+                   <p>It controls and manages hardware like the Central Processing Unit (CPU), memory, storage devices (hard drives, SSDs), and input/output devices (keyboard, mouse, monitor, printer). It also manages software execution, ensuring that multiple applications can run concurrently without interfering with each other.</p>
+                   <p>The OS provides a user interface (UI), which can be a Graphical User Interface (GUI) with icons and windows, or a Command-Line Interface (CLI) where users type commands. This UI allows users to interact with the computer system.</p>
+                   <h3>Core Functions:</h3>
+                   <ul class="core-functions-list">
+                       <li><strong>Process Management:</strong> Creating, deleting, suspending, and resuming processes (running programs), and managing how they share the CPU.</li>
+                       <li><strong>Memory Management:</strong> Allocating and deallocating memory space to processes as needed, keeping track of memory usage, and swapping processes between main memory and disk.</li>
+                       <li><strong>File System Management:</strong> Organizing files and directories on storage devices, controlling access permissions, and providing mechanisms for file creation, deletion, and manipulation.</li>
+                       <li><strong>Device Management:</strong> Managing communication with hardware devices through device drivers, handling input/output operations.</li>
+                       <li><strong>Security and Protection:</strong> Protecting system resources from unauthorized access and ensuring that different processes cannot interfere with each other's memory or data.</li>
+                       <li><strong>Networking:</strong> Managing network connections and protocols, enabling communication between computers.</li>
+                   </ul>
+                   <p>Examples of popular operating systems include Microsoft Windows (for desktops/laptops), macOS (for Apple desktops/laptops), Linux (servers, desktops, embedded systems), Android (for smartphones/tablets), and iOS (for Apple iPhones/iPads).</p>
+                   <p>In essence, the OS abstracts the complexity of the hardware, providing a consistent platform for applications to run and enabling users to perform tasks efficiently.</p>
+              </div>
         </div>
     </div>
+
     <div id="cpu-modal"
          class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out"
          onclick="closeModal('cpu-modal')">
           <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out"
                onclick="event.stopPropagation()">
-             <button onclick="closeModal('cpu-modal')" class="modal-close-button">&times;</button>
-             <h2 class="text-2xl font-semibold mb-4 text-black">Introduction to CPU Scheduling</h2>
-             <div class="modal-text-content space-y-3 max-h-[75vh] overflow-y-auto pr-4">
-                  <p>CPU scheduling is a core process in multiprogramming operating systems. It involves selecting a process from the set of processes currently in the <strong>ready queue</strong> (waiting for CPU time) and allocating the CPU to it for execution. The goal is to make the system efficient, fast, and fair.</p>
-                  <h3>Goals of CPU Scheduling:</h3>
-                  <p>Effective scheduling aims to balance several potentially conflicting objectives:</p>
-                  <ul class="characteristics-list">
-                      <li><strong>Maximize CPU Utilization:</strong> Keep the CPU as busy as possible, minimizing idle time.</li>
-                      <li><strong>Maximize Throughput:</strong> Complete as many processes as possible per unit of time.</li>
-                      <li><strong>Minimize Turnaround Time:</strong> Reduce the total time a process takes from submission to completion (waiting time + execution time + I/O time).</li>
-                      <li><strong>Minimize Waiting Time:</strong> Reduce the amount of time processes spend waiting in the ready queue.</li>
-                      <li><strong>Minimize Response Time:</strong> Reduce the time between a user request and the first response (important for interactive systems).</li>
-                      <li><strong>Ensure Fairness:</strong> Give each process a fair share of the CPU time, preventing starvation (where a process waits indefinitely).</li>
-                  </ul>
-                  <h3>Preemptive vs. Non-Preemptive Scheduling:</h3>
-                  <p>Scheduling algorithms can be categorized based on whether a running process can be interrupted:</p>
-                  <ul class="characteristics-list">
-                     <li><strong>Non-Preemptive:</strong> Once the CPU has been allocated to a process, it keeps the CPU until it either terminates or switches to a waiting state (e.g., for I/O). It cannot be forcibly removed. Simpler to implement but can lead to poor response times if a long process occupies the CPU. Examples: FCFS, non-preemptive SJF, non-preemptive Priority.</li>
-                     <li><strong>Preemptive:</strong> The currently running process can be interrupted and moved back to the ready queue by the operating system, typically when a higher-priority process arrives, an interrupt occurs, or its allocated time slice expires. This allows for better responsiveness and fairness but incurs overhead due to context switching. Examples: RR, SRTF, preemptive Priority, LRTF.</li>
-                 </ul>
-                  <p>The <strong>Dispatcher</strong> is the module that gives control of the CPU to the process selected by the short-term scheduler. This involves switching context, switching to user mode, and jumping to the proper location in the user program to restart that program.</p>
-                  <p>The choice of scheduling algorithm depends heavily on the system's requirements – batch systems might prioritize throughput, while interactive systems prioritize response time.</p>
-             </div>
-        </div>
+               <button onclick="closeModal('cpu-modal')" class="modal-close-button">&times;</button>
+               <h2 class="text-2xl font-semibold mb-4 text-black">Introduction to CPU Scheduling</h2>
+               <div class="modal-text-content space-y-3 max-h-[75vh] overflow-y-auto pr-4">
+                     <p>CPU scheduling is a core process in multiprogramming operating systems. It involves selecting a process from the set of processes currently in the <strong>ready queue</strong> (waiting for CPU time) and allocating the CPU to it for execution. The goal is to make the system efficient, fast, and fair.</p>
+                     <h3>Goals of CPU Scheduling:</h3>
+                     <p>Effective scheduling aims to balance several potentially conflicting objectives:</p>
+                     <ul class="characteristics-list">
+                         <li><strong>Maximize CPU Utilization:</strong> Keep the CPU as busy as possible, minimizing idle time.</li>
+                         <li><strong>Maximize Throughput:</strong> Complete as many processes as possible per unit of time.</li>
+                         <li><strong>Minimize Turnaround Time:</strong> Reduce the total time a process takes from submission to completion (waiting time + execution time + I/O time).</li>
+                         <li><strong>Minimize Waiting Time:</strong> Reduce the amount of time processes spend waiting in the ready queue.</li>
+                         <li><strong>Minimize Response Time:</strong> Reduce the time between a user request and the first response (important for interactive systems).</li>
+                         <li><strong>Ensure Fairness:</strong> Give each process a fair share of the CPU time, preventing starvation (where a process waits indefinitely).</li>
+                     </ul>
+                     <h3>Preemptive vs. Non-Preemptive Scheduling:</h3>
+                     <p>Scheduling algorithms can be categorized based on whether a running process can be interrupted:</p>
+                     <ul class="characteristics-list">
+                         <li><strong>Non-Preemptive:</strong> Once the CPU has been allocated to a process, it keeps the CPU until it either terminates or switches to a waiting state (e.g., for I/O). It cannot be forcibly removed. Simpler to implement but can lead to poor response times if a long process occupies the CPU. Examples: FCFS, non-preemptive SJF, non-preemptive Priority.</li>
+                         <li><strong>Preemptive:</strong> The currently running process can be interrupted and moved back to the ready queue by the operating system, typically when a higher-priority process arrives, an interrupt occurs, or its allocated time slice expires. This allows for better responsiveness and fairness but incurs overhead due to context switching. Examples: RR, SRTF, preemptive Priority, LRTF.</li>
+                     </ul>
+                     <p>The <strong>Dispatcher</strong> is the module that gives control of the CPU to the process selected by the short-term scheduler. This involves switching context, switching to user mode, and jumping to the proper location in the user program to restart that program.</p>
+                     <p>The choice of scheduling algorithm depends heavily on the system's requirements – batch systems might prioritize throughput, while interactive systems prioritize response time.</p>
+               </div>
+         </div>
     </div>
+
     <div id="fcfs-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('fcfs-modal')">
         <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
             <button onclick="closeModal('fcfs-modal')" class="modal-close-button">&times;</button>
             <h2 class="text-2xl font-semibold mb-4 text-black">First-Come, First-Served (FCFS)</h2>
             <div class="modal-text-content space-y-3 max-h-[75vh] overflow-y-auto pr-4">
-                 <h3>What it is:</h3>
-                 <p>FCFS is the most basic CPU scheduling algorithm where the process that requests the CPU <strong>first</strong> (i.e., arrives in the ready queue first) is allocated the CPU <strong>first</strong>. It strictly follows the <strong>arrival time</strong> of processes. It's analogous to a queue at a shop counter – first in line gets served first. This algorithm is implemented using a FIFO (First-In, First-Out) queue and is strictly <strong>non-preemptive</strong>. Once a process gains control of the CPU, it retains it until it either completes its entire CPU burst or voluntarily relinquishes it by blocking for an I/O operation or terminating.</p>
-                 <h3>How it works (Steps):</h3>
-                 <ol class="steps-list">
-                      <li>Maintain a FIFO (First-In, First-Out) ready queue for processes waiting for the CPU.</li>
-                      <li>When a process enters the ready queue, its Process Control Block (PCB) is linked to the tail of the queue.</li>
-                      <li>When the CPU becomes free, allocate it to the process at the head of the ready queue.</li>
-                      <li>The chosen process runs until it completes its CPU burst or blocks for an I/O operation.</li>
-                      <li>If the process completes, it is terminated. If it blocks, it moves to a waiting queue, and the CPU is allocated to the next process from the head of the ready queue.</li>
-                 </ol>
-                 <h3>Characteristics:</h3>
-                 <ul class="characteristics-list">
-                      <li>Simple to understand and implement.</li>
-                      <li>Non-preemptive.</li>
-                      <li>Can suffer from the "Convoy Effect" (short processes wait for long ones).</li>
-                      <li>Generally leads to high average waiting time, especially if long jobs arrive early.</li>
-                      <li>Favors CPU-bound processes over I/O-bound processes (as I/O-bound processes block frequently and lose their place in the queue).</li>
-                 </ul>
-                 <button onclick="window.location.href='algo.html#fcfs'" class="modal-visualize-button">
-                     Visualize FCFS
-                 </button>
-            </div>
-        </div>
-    </div>
-    <div id="sjf-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('sjf-modal')">
+                <h3>What it is:</h3>
+                <p>FCFS is the most basic CPU scheduling algorithm where the process that requests the CPU <strong>first</strong> (i.e., arrives in the ready queue first) is allocated the CPU <strong>first</strong>. It strictly follows the <strong>arrival time</strong> of processes. It's analogous to a queue at a shop counter – first in line gets served first. This algorithm is implemented using a FIFO (First-In, First-Out) queue and is strictly <strong>non-preemptive</strong>. Once a process gains control of the CPU, it retains it until it either completes its entire CPU burst or voluntarily relinquishes it by blocking for an I/O operation or terminating.</p>
+                <h3>How it works (Steps):</h3>
+                <ol class="steps-list">
+                    <li>Maintain a FIFO (First-In, First-Out) ready queue for processes waiting for the CPU.</li>
+                    <li>When a process enters the ready queue, its Process Control Block (PCB) is linked to the tail of the queue.</li>
+                    <li>When the CPU becomes free, allocate it to the process at the head of the ready queue.</li>
+                    <li>The chosen process runs until it completes its CPU burst or blocks for an I/O operation.</li>
+                    <li>If the process completes, it is terminated. If it blocks, it moves to a waiting queue, and the CPU is allocated to the next process from the head of the ready queue.</li>
+                </ol>
+                <h3>Characteristics:</h3>
+                <ul class="characteristics-list">
+                    <li>Simple to understand and implement.</li>
+                    <li>Non-preemptive.</li>
+                    <li>Can suffer from the "Convoy Effect" (short processes wait for long ones).</li>
+                    <li>Generally leads to high average waiting time, especially if long jobs arrive early.</li>
+                    <li>Favors CPU-bound processes over I/O-bound processes (as I/O-bound processes block frequently and lose their place in the queue).</li>
+                </ul>
+                <a href="algo.html#fcfs" class="modal-visualize-button">Visualize FCFS</a> </div>
+       </div>
+   </div>
+
+   <div id="sjf-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('sjf-modal')">
          <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
              <button onclick="closeModal('sjf-modal')" class="modal-close-button">&times;</button>
              <h2 class="text-2xl font-semibold mb-4 text-black">Shortest Job First (SJF) - Non-Preemptive</h2>
@@ -307,26 +311,24 @@
                  <p>Shortest Job First (SJF) is a scheduling algorithm that selects the process with the <strong>smallest estimated next CPU burst time</strong> from the ready queue for execution. When the currently running process finishes its CPU burst or blocks, the scheduler examines all processes in the ready queue and chooses the one predicted to require the least amount of CPU time next. The primary decision criterion is the <strong>predicted length of the next CPU burst</strong>. This version is <strong>non-preemptive</strong>, meaning once a process starts its CPU burst, it runs to completion of that burst without interruption, even if a shorter job arrives later.</p>
                  <h3>How it works (Steps):</h3>
                  <ol class="steps-list">
-                      <li>Associate the length of the next CPU burst with each process in the ready queue. (Note: In practice, this often needs to be estimated based on past behavior).</li>
-                      <li>When the CPU is free, search the entire ready queue to find the process with the minimum estimated CPU burst time.</li>
-                      <li>Allocate the CPU to the selected process.</li>
-                      <li>If multiple processes share the same minimum burst time, use FCFS scheduling among them to break the tie.</li>
-                      <li>The selected process executes its complete CPU burst without interruption unless it blocks for I/O.</li>
+                     <li>Associate the length of the next CPU burst with each process in the ready queue. (Note: In practice, this often needs to be estimated based on past behavior).</li>
+                     <li>When the CPU is free, search the entire ready queue to find the process with the minimum estimated CPU burst time.</li>
+                     <li>Allocate the CPU to the selected process.</li>
+                     <li>If multiple processes share the same minimum burst time, use FCFS scheduling among them to break the tie.</li>
+                     <li>The selected process executes its complete CPU burst without interruption unless it blocks for I/O.</li>
                  </ol>
                  <h3>Characteristics:</h3>
                  <ul class="characteristics-list">
-                      <li>Provably optimal in minimizing average waiting time for a given set of processes available simultaneously.</li>
-                      <li>Non-preemptive.</li>
-                      <li>Requires predicting or knowing the next CPU burst time, which is practically impossible to know exactly; often estimated using techniques like exponential averaging of previous burst times.</li>
-                      <li>Can lead to starvation for processes with consistently long burst times if there is a steady stream of short jobs arriving.</li>
+                     <li>Provably optimal in minimizing average waiting time for a given set of processes available simultaneously.</li>
+                     <li>Non-preemptive.</li>
+                     <li>Requires predicting or knowing the next CPU burst time, which is practically impossible to know exactly; often estimated using techniques like exponential averaging of previous burst times.</li>
+                     <li>Can lead to starvation for processes with consistently long burst times if there is a steady stream of short jobs arriving.</li>
                  </ul>
-                 <button onclick="window.location.href='algo.html#sjf'" class="modal-visualize-button">
-                     Visualize SJF
-                 </button>
-            </div>
+                 <a href="algo.html#sjf" class="modal-visualize-button">Visualize SJF</a> </div>
         </div>
     </div>
-    <div id="ljf-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('ljf-modal')">
+
+   <div id="ljf-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('ljf-modal')">
          <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
              <button onclick="closeModal('ljf-modal')" class="modal-close-button">&times;</button>
              <h2 class="text-2xl font-semibold mb-4 text-black">Longest Job First (LJF) - Non-Preemptive</h2>
@@ -335,26 +337,24 @@
                  <p>Longest Job First (LJF) is the logical opposite of SJF. It is a <strong>non-preemptive</strong> scheduling algorithm where the process with the <strong>longest estimated next CPU burst time</strong> is selected from the ready queue to run next. When the current process releases the CPU, the scheduler searches the ready queue and picks the job predicted to run for the longest duration. Its decision criterion is the <strong>maximum predicted CPU burst time</strong>. Like SJF, it requires estimation of future burst times. It is generally not used in practical systems due to its poor performance characteristics for average waiting and turnaround times.</p>
                  <h3>How it works (Steps):</h3>
                  <ol class="steps-list">
-                      <li>Associate the length of the next CPU burst with each process in the ready queue.</li>
-                      <li>When the CPU becomes available, search the ready queue for the process with the maximum estimated CPU burst time.</li>
-                      <li>Allocate the CPU to the selected process.</li>
-                      <li>If multiple processes share the same maximum burst time, FCFS might be used as a tie-breaker.</li>
-                      <li>The selected process runs until it finishes its CPU burst or voluntarily blocks.</li>
+                     <li>Associate the length of the next CPU burst with each process in the ready queue.</li>
+                     <li>When the CPU becomes available, search the ready queue for the process with the maximum estimated CPU burst time.</li>
+                     <li>Allocate the CPU to the selected process.</li>
+                     <li>If multiple processes share the same maximum burst time, FCFS might be used as a tie-breaker.</li>
+                     <li>The selected process runs until it finishes its CPU burst or voluntarily blocks.</li>
                  </ol>
                  <h3>Characteristics:</h3>
                  <ul class="characteristics-list">
-                      <li>Non-preemptive.</li>
-                      <li>Maximizes turnaround time and waiting time, especially for shorter processes which get stuck behind long ones.</li>
-                      <li>Generally results in poor overall system throughput and response time.</li>
-                      <li>Can cause severe starvation for short jobs if long jobs keep arriving.</li>
-                      <li>Rarely used in practice.</li>
+                     <li>Non-preemptive.</li>
+                     <li>Maximizes turnaround time and waiting time, especially for shorter processes which get stuck behind long ones.</li>
+                     <li>Generally results in poor overall system throughput and response time.</li>
+                     <li>Can cause severe starvation for short jobs if long jobs keep arriving.</li>
+                     <li>Rarely used in practice.</li>
                  </ul>
-                 <button onclick="window.location.href='algo.html#ljf'" class="modal-visualize-button">
-                     Visualize LJF
-                 </button>
-            </div>
+                 <a href="algo.html#ljf" class="modal-visualize-button">Visualize LJF</a> </div>
         </div>
     </div>
+
     <div id="srtf-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('srtf-modal')">
          <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
              <button onclick="closeModal('srtf-modal')" class="modal-close-button">&times;</button>
@@ -364,57 +364,53 @@
                  <p>Shortest Remaining Time First (SRTF) is the <strong>preemptive</strong> version of the Shortest Job First (SJF) algorithm. It allocates the CPU to the process that has the <strong>smallest estimated remaining time</strong> until its current CPU burst completes. Unlike non-preemptive SJF, SRTF checks the ready queue whenever a new process arrives. If the new process has an estimated burst time (or remaining time, if it's already run partially) shorter than the *remaining* time of the currently executing process, the OS preempts the current process and schedules the new, shorter one. The key decision criterion is the <strong>minimum estimated remaining CPU burst time</strong> among all processes (running or ready).</p>
                  <h3>How it works (Steps):</h3>
                  <ol class="steps-list">
-                      <li>Maintain the ready queue, tracking the estimated remaining burst time for each process.</li>
-                      <li>When a new process arrives in the ready queue: Compare its total burst time with the *remaining* burst time of the currently executing process (if any).</li>
-                      <li>If the new process's burst time is shorter than the current process's remaining time: Preempt the current process (update its remaining time and return it to the ready queue) and schedule the new process.</li>
-                      <li>If the new process's burst time is not shorter: Place it in the ready queue (conceptually, according to its remaining time).</li>
-                      <li>When the currently running process finishes its burst or blocks: Select the process from the ready queue with the absolute shortest estimated remaining burst time to run next.</li>
-                      <li>Handle ties using FCFS or other consistent tie-breaking rules.</li>
+                     <li>Maintain the ready queue, tracking the estimated remaining burst time for each process.</li>
+                     <li>When a new process arrives in the ready queue: Compare its total burst time with the *remaining* burst time of the currently executing process (if any).</li>
+                     <li>If the new process's burst time is shorter than the current process's remaining time: Preempt the current process (update its remaining time and return it to the ready queue) and schedule the new process.</li>
+                     <li>If the new process's burst time is not shorter: Place it in the ready queue (conceptually, according to its remaining time).</li>
+                     <li>When the currently running process finishes its burst or blocks: Select the process from the ready queue with the absolute shortest estimated remaining burst time to run next.</li>
+                     <li>Handle ties using FCFS or other consistent tie-breaking rules.</li>
                  </ol>
                 <h3>Characteristics:</h3>
-                 <ul class="characteristics-list">
-                      <li>Preemptive.</li>
-                      <li>Achieves the optimal minimum average waiting time among all scheduling algorithms.</li>
-                      <li>Requires accurate estimation/knowledge of remaining burst times (same difficulty as SJF).</li>
-                      <li>Potential for starvation of long processes if there's a continuous supply of short processes.</li>
-                      <li>Higher context switching overhead compared to non-preemptive SJF due to preemptions.</li>
-                 </ul>
-                 <button onclick="window.location.href='algo.html#srtf'" class="modal-visualize-button">
-                     Visualize SRTF
-                 </button>
-            </div>
+                <ul class="characteristics-list">
+                    <li>Preemptive.</li>
+                    <li>Achieves the optimal minimum average waiting time among all scheduling algorithms.</li>
+                    <li>Requires accurate estimation/knowledge of remaining burst times (same difficulty as SJF).</li>
+                    <li>Potential for starvation of long processes if there's a continuous supply of short processes.</li>
+                    <li>Higher context switching overhead compared to non-preemptive SJF due to preemptions.</li>
+                </ul>
+                <a href="algo.html#srtf" class="modal-visualize-button">Visualize SRTF</a> </div>
         </div>
     </div>
+
     <div id="lrtf-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('lrtf-modal')">
          <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
              <button onclick="closeModal('lrtf-modal')" class="modal-close-button">&times;</button>
              <h2 class="text-2xl font-semibold mb-4 text-black">Longest Remaining Time First (LRTF)</h2>
              <div class="modal-text-content space-y-3 max-h-[75vh] overflow-y-auto pr-4">
-                <h3>What it is:</h3>
-                <p>Longest Remaining Time First (LRTF) is the <strong>preemptive</strong> counterpart to the Longest Job First (LJF) algorithm. At any scheduling point (like a new process arrival or potentially at regular intervals), the scheduler selects the process with the <strong>longest estimated remaining processing time</strong> among all processes currently in the ready queue or running. If a newly arriving process has a longer estimated run time than the remaining time of the currently executing process, the current process might be preempted (depending on the exact implementation, though preemption based on longer jobs arriving is less common than for shorter jobs in SRTF). The primary decision criterion is the <strong>maximum estimated remaining CPU burst time</strong>.</p>
+                 <h3>What it is:</h3>
+                 <p>Longest Remaining Time First (LRTF) is the <strong>preemptive</strong> counterpart to the Longest Job First (LJF) algorithm. At any scheduling point (like a new process arrival or potentially at regular intervals), the scheduler selects the process with the <strong>longest estimated remaining processing time</strong> among all processes currently in the ready queue or running. If a newly arriving process has a longer estimated run time than the remaining time of the currently executing process, the current process might be preempted (depending on the exact implementation, though preemption based on longer jobs arriving is less common than for shorter jobs in SRTF). The primary decision criterion is the <strong>maximum estimated remaining CPU burst time</strong>.</p>
                  <h3>How it works (Steps):</h3>
-                <ol class="steps-list">
-                      <li>Maintain the ready queue with the estimated remaining burst time for each process.</li>
-                      <li>When a scheduling decision is needed (e.g., new arrival, completion, block, or timer interrupt): Examine all processes in the ready queue plus the currently running process (if any).</li>
-                      <li>Select the process with the maximum estimated remaining burst time.</li>
-                      <li>If the selected process is *not* the currently running one, preempt the current process (update its remaining time, return it to the ready queue) and schedule the selected (longer) process.</li>
-                      <li>Run the chosen process. Re-evaluate at the next scheduling point.</li>
-                      <li>Handle ties using FCFS or other criteria.</li>
+                 <ol class="steps-list">
+                     <li>Maintain the ready queue with the estimated remaining burst time for each process.</li>
+                     <li>When a scheduling decision is needed (e.g., new arrival, completion, block, or timer interrupt): Examine all processes in the ready queue plus the currently running process (if any).</li>
+                     <li>Select the process with the maximum estimated remaining burst time.</li>
+                     <li>If the selected process is *not* the currently running one, preempt the current process (update its remaining time, return it to the ready queue) and schedule the selected (longer) process.</li>
+                     <li>Run the chosen process. Re-evaluate at the next scheduling point.</li>
+                     <li>Handle ties using FCFS or other criteria.</li>
                  </ol>
                 <h3>Characteristics:</h3>
-                 <ul class="characteristics-list">
-                      <li>Preemptive.</li>
-                      <li>Gives highest preference to longer processes, significantly delaying shorter ones.</li>
-                      <li>Leads to very high average waiting time and turnaround time.</li>
-                      <li>Can cause starvation for short processes.</li>
-                      <li>Mainly of theoretical interest; rarely used in practical systems due to poor performance metrics for most use cases.</li>
-                 </ul>
-                 <button onclick="window.location.href='algo.html#lrtf'" class="modal-visualize-button">
-                     Visualize LRTF
-                 </button>
-            </div>
+                <ul class="characteristics-list">
+                    <li>Preemptive.</li>
+                    <li>Gives highest preference to longer processes, significantly delaying shorter ones.</li>
+                    <li>Leads to very high average waiting time and turnaround time.</li>
+                    <li>Can cause starvation for short processes.</li>
+                    <li>Mainly of theoretical interest; rarely used in practical systems due to poor performance metrics for most use cases.</li>
+                </ul>
+                <a href="algo.html#lrtf" class="modal-visualize-button">Visualize LRTF</a> </div>
         </div>
     </div>
+
     <div id="rr-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('rr-modal')">
          <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
              <button onclick="closeModal('rr-modal')" class="modal-close-button">&times;</button>
@@ -424,33 +420,31 @@
                  <p>Round Robin (RR) is a <strong>preemptive</strong> scheduling algorithm specifically designed for time-sharing systems to provide reasonable response times for interactive users. It operates similarly to FCFS but adds preemption based on a fixed time limit. A small unit of time, called a <strong>time quantum</strong> or <strong>time slice</strong> (typically ranging from 10 to 100 milliseconds), is defined. The ready queue is managed as a circular FIFO queue. Each process gets the CPU for a duration up to one time quantum. If the process finishes its burst within the quantum, it leaves the CPU. If it's still running when the quantum expires, a timer interrupt occurs, the OS preempts the process, performs a context switch, places the preempted process at the <strong>tail</strong> of the ready queue, and dispatches the process at the <strong>head</strong> of the queue.</p>
                  <h3>How it works (Steps):</h3>
                  <ol class="steps-list">
-                      <li>Maintain the ready queue as a FIFO circular queue.</li>
-                      <li>Pick the first process from the head of the ready queue.</li>
-                      <li>Set a timer to interrupt after one time quantum.</li>
-                      <li>Dispatch the process to run.</li>
-                      <li>Let the process run. Two things can happen:</li>
-                      <li> <strong>a) Process completes or blocks before timer expires:</strong> The process voluntarily releases the CPU. Schedule the next process from the head of the queue. If it blocked, move it to a wait queue; if completed, terminate it.</li>
-                      <li> <strong>b) Timer expires:</strong> An interrupt occurs. Stop the current process. Update its state (e.g., remaining time). Move the process to the *tail* of the ready queue. Schedule the process now at the head of the queue.</li>
+                     <li>Maintain the ready queue as a FIFO circular queue.</li>
+                     <li>Pick the first process from the head of the ready queue.</li>
+                     <li>Set a timer to interrupt after one time quantum.</li>
+                     <li>Dispatch the process to run.</li>
+                     <li>Let the process run. Two things can happen:</li>
+                     <li> <strong>a) Process completes or blocks before timer expires:</strong> The process voluntarily releases the CPU. Schedule the next process from the head of the queue. If it blocked, move it to a wait queue; if completed, terminate it.</li>
+                     <li> <strong>b) Timer expires:</strong> An interrupt occurs. Stop the current process. Update its state (e.g., remaining time). Move the process to the *tail* of the ready queue. Schedule the process now at the head of the queue.</li>
                  </ol>
-                 <h3>Characteristics:</h3>
-                 <ul class="characteristics-list">
-                      <li>Preemptive (based on time quantum).</li>
-                      <li>Fair - prevents starvation as every process gets regular CPU time.</li>
-                      <li>Provides good response time for interactive systems.</li>
-                      <li>Performance heavily depends on the size of the time quantum:
-                          <ul>
+                <h3>Characteristics:</h3>
+                <ul class="characteristics-list">
+                    <li>Preemptive (based on time quantum).</li>
+                    <li>Fair - prevents starvation as every process gets regular CPU time.</li>
+                    <li>Provides good response time for interactive systems.</li>
+                    <li>Performance heavily depends on the size of the time quantum:
+                         <ul>
                              <li>Very large quantum: Behaves like FCFS.</li>
                              <li>Very small quantum: High context switching overhead, system spends more time switching than doing work (appears as if processor is slower).</li>
-                          </ul>
-                      </li>
-                      <li>Average waiting time can be relatively high, especially if context switching overhead is significant.</li>
-                 </ul>
-                 <button onclick="window.location.href='algo.html#rr'" class="modal-visualize-button">
-                     Visualize RR
-                 </button>
-            </div>
+                         </ul>
+                    </li>
+                    <li>Average waiting time can be relatively high, especially if context switching overhead is significant.</li>
+                </ul>
+                <a href="algo.html#rr" class="modal-visualize-button">Visualize RR</a> </div>
         </div>
     </div>
+
     <div id="priority-p-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('priority-p-modal')">
          <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
              <button onclick="closeModal('priority-p-modal')" class="modal-close-button">&times;</button>
@@ -460,28 +454,26 @@
                  <p>Preemptive Priority Scheduling assigns a priority level (typically an integer) to each process. The CPU is always allocated to the process with the <strong>highest priority</strong> (where 'highest' might mean the smallest or largest integer, depending on convention). In this <strong>preemptive</strong> version, if a new process arrives in the ready queue with a priority *higher* than the priority of the currently running process, the operating system immediately interrupts (preempts) the currently running process and switches execution to the newly arrived higher-priority process. The preempted process is returned to the ready queue. The decision criterion is purely the <strong>process priority level</strong>.</p>
                  <h3>How it works (Steps):</h3>
                  <ol class="steps-list">
-                      <li>Assign a priority value to each process (lower number often means higher priority, but this can vary).</li>
-                      <li>Maintain the ready queue, typically sorted or managed based on priority.</li>
-                      <li>When a new process arrives: Compare its priority with the priority of the currently running process.</li>
-                      <li>If the new process has a strictly higher priority: Preempt the currently running process (return it to the ready queue) and schedule the new, higher-priority process.</li>
-                      <li>If the new process does not have higher priority: Place it in the ready queue according to its priority level.</li>
-                      <li>When the currently running process completes, blocks, or is preempted: Select the process with the highest priority from the ready queue to run next.</li>
-                      <li>Use FCFS or RR among processes with the same highest priority level (tie-breaking).</li>
+                     <li>Assign a priority value to each process (lower number often means higher priority, but this can vary).</li>
+                     <li>Maintain the ready queue, typically sorted or managed based on priority.</li>
+                     <li>When a new process arrives: Compare its priority with the priority of the currently running process.</li>
+                     <li>If the new process has a strictly higher priority: Preempt the currently running process (return it to the ready queue) and schedule the new, higher-priority process.</li>
+                     <li>If the new process does not have higher priority: Place it in the ready queue according to its priority level.</li>
+                     <li>When the currently running process completes, blocks, or is preempted: Select the process with the highest priority from the ready queue to run next.</li>
+                     <li>Use FCFS or RR among processes with the same highest priority level (tie-breaking).</li>
                  </ol>
                 <h3>Characteristics:</h3>
-                <ul class="characteristics-list">
-                     <li>Preemptive.</li>
-                     <li>Ensures that high-priority tasks are processed quickly, suitable for real-time systems or systems with critical tasks.</li>
-                     <li>Major drawback: Potential for indefinite blocking or <strong>starvation</strong> of low-priority processes if there is a continuous stream of high-priority tasks.</li>
-                     <li>Can be mitigated using techniques like <strong>aging</strong>, where the priority of waiting processes is gradually increased over time.</li>
-                     <li>Priority assignment can be static (fixed) or dynamic (changing based on process behavior or system conditions).</li>
-                 </ul>
-                 <button onclick="window.location.href='algo.html#priority-p'" class="modal-visualize-button">
-                     Visualize Preemptive Priority
-                 </button>
-            </div>
-        </div>
-    </div>
+               <ul class="characteristics-list">
+                   <li>Preemptive.</li>
+                   <li>Ensures that high-priority tasks are processed quickly, suitable for real-time systems or systems with critical tasks.</li>
+                   <li>Major drawback: Potential for indefinite blocking or <strong>starvation</strong> of low-priority processes if there is a continuous stream of high-priority tasks.</li>
+                   <li>Can be mitigated using techniques like <strong>aging</strong>, where the priority of waiting processes is gradually increased over time.</li>
+                   <li>Priority assignment can be static (fixed) or dynamic (changing based on process behavior or system conditions).</li>
+               </ul>
+               <a href="algo.html#priority-p" class="modal-visualize-button">Visualize Preemptive Priority</a> </div>
+       </div>
+   </div>
+
     <div id="priority-np-modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-[1000] opacity-0 visibility-hidden transition-opacity duration-300 ease-out" onclick="closeModal('priority-np-modal')">
          <div class="modal-content bg-pink-100 text-gray-800 p-8 rounded-lg shadow-xl max-w-5xl w-full mx-auto relative transform scale-100 transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
              <button onclick="closeModal('priority-np-modal')" class="modal-close-button">&times;</button>
@@ -491,72 +483,84 @@
                  <p>Non-Preemptive Priority Scheduling also assigns a priority level to each process. When the CPU becomes free (i.e., the currently running process terminates or blocks), the scheduler selects the process with the <strong>highest priority</strong> from the entire ready queue. The key difference from the preemptive version is that once a process starts its CPU burst, it continues to run until it completes that burst or blocks, even if a higher-priority process arrives in the ready queue during its execution. It is <strong>non-preemptive</strong>. The decision criterion is the <strong>process priority level</strong>, applied only when the CPU is free.</p>
                  <h3>How it works (Steps):</h3>
                  <ol class="steps-list">
-                      <li>Assign a priority value to each process.</li>
-                      <li>Maintain the ready queue based on priority (or search it when needed).</li>
-                      <li>When the currently running process completes its CPU burst or blocks (making the CPU free): Search the ready queue and select the process with the highest priority.</li>
-                      <li>Allocate the CPU to the selected process.</li>
-                      <li>The process runs without interruption until it finishes the current burst or blocks. New arrivals, even with higher priority, must wait.</li>
-                      <li>Use FCFS to break ties among processes with the same highest priority.</li>
+                     <li>Assign a priority value to each process.</li>
+                     <li>Maintain the ready queue based on priority (or search it when needed).</li>
+                     <li>When the currently running process completes its CPU burst or blocks (making the CPU free): Search the ready queue and select the process with the highest priority.</li>
+                     <li>Allocate the CPU to the selected process.</li>
+                     <li>The process runs without interruption until it finishes the current burst or blocks. New arrivals, even with higher priority, must wait.</li>
+                     <li>Use FCFS to break ties among processes with the same highest priority.</li>
                  </ol>
-                 <h3>Characteristics:</h3>
-                 <ul class="characteristics-list">
-                      <li>Non-preemptive.</li>
-                      <li>Simpler to implement than its preemptive counterpart (fewer context switches).</li>
-                      <li>Still susceptible to <strong>starvation</strong> of low-priority processes.</li>
-                      <li>A high-priority process might experience significant waiting time if it arrives just after a long, lower-priority process has started its CPU burst.</li>
-                      <li>Aging can also be used here to mitigate starvation.</li>
-                 </ul>
-                 <button onclick="window.location.href='algo.html#priority-np'" class="modal-visualize-button">
-                     Visualize Non-Preemptive Priority
-                 </button>
-            </div>
+                <h3>Characteristics:</h3>
+                <ul class="characteristics-list">
+                    <li>Non-preemptive.</li>
+                    <li>Simpler to implement than its preemptive counterpart (fewer context switches).</li>
+                    <li>Still susceptible to <strong>starvation</strong> of low-priority processes.</li>
+                    <li>A high-priority process might experience significant waiting time if it arrives just after a long, lower-priority process has started its CPU burst.</li>
+                    <li>Aging can also be used here to mitigate starvation.</li>
+                </ul>
+                <a href="algo.html#priority-np" class="modal-visualize-button">Visualize Non-Preemptive Priority</a> </div>
         </div>
     </div>
+
     <script>
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.classList.remove('hidden');
-                setTimeout(() => {
+                setTimeout(() => { // Allow display change to take effect before transition
                     modal.classList.remove('opacity-0', 'visibility-hidden');
-                    modal.querySelector('.modal-content').classList.remove('scale-95');
+                    modal.querySelector('.modal-content').classList.remove('scale-95'); // Start scale animation
                     modal.querySelector('.modal-content').classList.add('scale-100');
-                    document.body.style.overflow = 'hidden';
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
                 }, 10);
             }
         }
+
         function closeModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.classList.add('opacity-0');
-                modal.querySelector('.modal-content').classList.remove('scale-100');
+                modal.querySelector('.modal-content').classList.remove('scale-100'); // Reverse scale animation
                 modal.querySelector('.modal-content').classList.add('scale-95');
-                 const transitionDuration = 300;
-                 modal.addEventListener('transitionend', function handler() {
-                     modal.classList.add('hidden', 'visibility-hidden');
-                     if (!document.querySelector('.modal:not(.hidden):not(.opacity-0)')) {
-                          document.body.style.overflow = '';
-                     }
-                     modal.removeEventListener('transitionend', handler);
-                 }, { once: true });
+
+                const transitionDuration = 300; // Match CSS transition duration
+
+                // Use transitionend event for reliability
+                modal.addEventListener('transitionend', function handler() {
+                    modal.classList.add('hidden', 'visibility-hidden');
+                    // Only restore body scroll if no other modals are visible
+                    if (!document.querySelector('.modal:not(.hidden):not(.opacity-0)')) {
+                        document.body.style.overflow = '';
+                    }
+                    modal.removeEventListener('transitionend', handler); // Clean up listener
+                }, { once: true }); // Ensure the listener runs only once
+
+                // Fallback timeout in case transitionend doesn't fire (e.g., interrupted transition)
                  setTimeout(() => {
-                     if (!modal.classList.contains('hidden')) {
-                          modal.classList.add('hidden', 'visibility-hidden');
-                          if (!document.querySelector('.modal:not(.hidden):not(.opacity-0)')) {
-                              document.body.style.overflow = '';
-                          }
-                     }
+                    if (!modal.classList.contains('hidden')) { // Check if already hidden by event listener
+                       modal.classList.add('hidden', 'visibility-hidden');
+                       if (!document.querySelector('.modal:not(.hidden):not(.opacity-0)')) {
+                           document.body.style.overflow = '';
+                       }
+                   }
                  }, transitionDuration);
             }
         }
+
+        // Close modal on Escape key press
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
-                 const visibleModal = document.querySelector('.modal:not(.hidden):not(.opacity-0)');
-                 if (visibleModal) {
-                     closeModal(visibleModal.id);
-                 }
+                // Find the topmost visible modal
+                const visibleModal = document.querySelector('.modal:not(.hidden):not(.opacity-0)');
+                if (visibleModal) {
+                    closeModal(visibleModal.id);
+                }
             }
         });
+
+        // Optional: Update copyright year automatically
+        // document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
     </script>
 </body>
 </html>
